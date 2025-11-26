@@ -1,8 +1,8 @@
 export default function Cart() {
   return (
-    <div>
+    <div style={{ padding: "40px" }}>
       <h1>Your Cart</h1>
-      <p>Items you added will appear here.</p>
+      <p>Your selected items will appear here.</p>
     </div>
   );
 }

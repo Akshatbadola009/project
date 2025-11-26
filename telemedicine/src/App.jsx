@@ -1,34 +1,23 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-
-import Home from "./pages/home";
-import Doctors from "./pages/Doctors";
-import DoctorDetails from "./pages/DoctorDetails";
-import BookAppointment from "./pages/BookAppointment";
-import Medicines from "./pages/Medicines";
+import Home from "./pages/Home";
+import AllDoctors from "./pages/AllDoctors";
+import Medicine from "./pages/Medicine";
+import Prescription from "./pages/Prescription";
 import Cart from "./pages/Cart";
-import Checkout from "./pages/Checkout";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <>
       <Navbar />
 
-      <div className="page-wrapper">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/doctors" element={<Doctors />} />
-          <Route path="/doctor/:id" element={<DoctorDetails />} />
-          <Route path="/book/:id" element={<BookAppointment />} />
-          <Route path="/medicines" element={<Medicines />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<Checkout />} />
-        </Routes>
-      </div>
-
-      <Footer />
-    </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/doctors" element={<AllDoctors />} />
+        <Route path="/medicine" element={<Medicine />} />
+        <Route path="/prescription" element={<Prescription />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+    </>
   );
 }

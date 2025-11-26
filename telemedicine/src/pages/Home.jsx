@@ -1,14 +1,34 @@
+import CategoryCard from "../components/CategoryCard";
 import "./Home.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
-  return (
-    <div className="home container">
-      <h1>Your Health, Our Priority ❤️</h1>
-      <p>Book appointments with best doctors and buy certified medicines</p>
+  const navigate = useNavigate();
 
-      <div className="home-btns">
-        <button>Book Appointment</button>
-        <button>Buy Medicines</button>
+  const categories = [
+    { name: "General Physician", icon: "/icons/physician.png" },
+    { name: "Gynecologist", icon: "/icons/gyno.png" },
+    { name: "Dermatologist", icon: "/icons/derma.png" },
+    { name: "Pediatrician", icon: "/icons/baby.png" },
+    { name: "Neurologist", icon: "/icons/brain.png" },
+    { name: "Gastroenterologist", icon: "/icons/stomach.png" }
+  ];
+
+  const handleCategoryClick = (cat) => {
+    navigate(`/doctors?filter=${cat}`);
+  };
+
+  return (
+    <div className="home">
+      <h1>Find by Speciality</h1>
+      <p>Browse trusted doctors & schedule your appointment.</p>
+
+      <div className="category-grid">
+        {categories.map((c, i) => (
+          <div key={i} onClick={() => handleCategoryClick(c.name)}>
+            <CategoryCard name={c.name} icon={c.icon} />
+          </div>
+        ))}
       </div>
     </div>
   );

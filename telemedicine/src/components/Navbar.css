@@ -1,20 +1,53 @@
 .navbar {
-  background-color: #1976d2;
-  padding: 15px 60px;
-  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px 50px;
+  border-bottom: 1px solid #e0e0e0;
+  background: white;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e2a78;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
 }
 
 .nav-links a {
-  margin-left: 20px;
+  font-size: 15px;
   text-decoration: none;
-  color: white;
-  font-weight: bold;
-  transition: 0.3s;
+  color: #222;
+  font-weight: 500;
 }
 
 .nav-links a:hover {
-  color: #ffe082;
+  color: #1e2a78;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cart {
+  font-size: 22px;
+  text-decoration: none;
+  color: black;
+}
+
+.create-btn {
+  padding: 10px 25px;
+  border-radius: 25px;
+  border: none;
+  background: linear-gradient(90deg, #6a79ff, #4e64ff);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
 }

@@ -3,15 +3,20 @@ import "./Navbar.css";
 
 export default function Navbar() {
   return (
-    <header className="navbar">
-      <h2 className="logo">🩺 HealthCare</h2>
+    <nav className="navbar">
+      <h2 className="logo">Gramarogya</h2>
 
-      <nav className="nav-links">
-        <Link to="/">Home</Link>
-        <Link to="/doctors">Doctors</Link>
-        <Link to="/medicines">Medicines</Link>
-        <Link to="/cart">Cart</Link>
-      </nav>
-    </header>
+      <ul className="nav-links">
+        <li><Link to="/">HOME</Link></li>
+        <li><Link to="/doctors">ALL DOCTORS</Link></li>
+        <li><Link to="/medicine">MEDICINE</Link></li>
+        <li><Link to="/prescription">PRESCRIPTION</Link></li>
+      </ul>
+
+      <div className="right">
+        <Link to="/cart" className="cart">🛒</Link>
+        <button className="create-btn">Create account</button>
+      </div>
+    </nav>
   );
 }
